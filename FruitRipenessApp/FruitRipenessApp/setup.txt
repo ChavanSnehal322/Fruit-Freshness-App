@@ -1,0 +1,143 @@
+# Quick Start Guide - Fruit Freshness App
+
+## 5-Minute Setup
+
+### Step 1: Create Xcode Project
+1. Open Xcode
+2. File > New > Project
+3. Select: **iOS** > **App**
+4. Fill in details:
+   - Product Name: `FruitFreshness`
+   - Team: Your team
+   - Organization Identifier: `com.yourcompany`
+   - Interface: **SwiftUI**
+   - Language: **Swift**
+5. Click **Next** and choose save location
+
+### Step 2: Add Source Code
+1. In Xcode's Project Navigator, select `ContentView.swift`
+2. Delete all existing code
+3. Copy entire contents of `FruitRipenessApp.swift`
+4. Paste into `ContentView.swift`
+
+### Step 3: Configure Permissions
+1. Select your project in Project Navigator
+2. Select your target
+3. Go to **Info** tab
+4. Right-click in the list > **Add Row**
+5. Add these keys:
+
+   **Key**: Privacy - Camera Usage Description
+   **Value**: We need camera access to scan fruits and vegetables
+   
+   **Key**: Privacy - Photo Library Usage Description  
+   **Value**: We need photo library access to analyze fruit images
+
+### Step 4: Build and Run
+1. Select a simulator (iPhone 14 or later recommended)
+2. Press **⌘ + R** or click the Play button
+3. Wait for build to complete
+4. App will launch in simulator
+
+## Testing on Real Device
+
+### Requirements
+- iPhone running iOS 16.0 or later
+- USB cable
+- Apple Developer account (free tier is fine)
+
+### Steps
+1. Connect iPhone to Mac
+2. In Xcode, select your iPhone from device menu
+3. Xcode may ask you to register device - click **Register**
+4. If prompted about signing, select your team
+5. Press **⌘ + R** to build and run
+6. On iPhone, go to Settings > General > VPN & Device Management
+7. Trust your developer certificate
+8. Launch app from home screen
+
+## App Structure Overview
+
+```
+FruitFreshness/
+├── FruitRipenessApp.swift (Main app entry)
+├── Views/
+│   ├── ContentView (Home screen)
+│   ├── CameraView (Photo capture)
+│   ├── ResultView (Analysis results)
+│   └── HistoryView (Past scans)
+├── Models/
+│   ├── FruitAnalysis
+│   └── RipenessStatus
+└── ViewModels/
+    └── FruitViewModel
+```
+
+## Common Issues & Fixes
+
+### "Build Failed"
+- Clean build folder: **⌘ + Shift + K**
+- Rebuild: **⌘ + B**
+
+### "No Such Module"
+- Ensure deployment target is iOS 16.0+
+- Check that SwiftUI is imported
+
+### "Signing Certificate Error"
+- Go to Preferences > Accounts
+- Add your Apple ID
+- Download manual profiles
+
+### Camera Not Working in Simulator
+- Normal behavior - simulators can't access camera
+- Use "Choose from Library" instead
+- Test camera on real device
+
+## Customization Tips
+
+### Change App Colors
+Edit these in the code:
+```swift
+.foregroundColor(.green)  // Change to your brand color
+```
+
+### Modify Fruit Database
+Add more fruits in `FruitViewModel`:
+```swift
+private let fruitDatabase: [String: FruitInfo] = [
+    "grape": FruitInfo(shelfLife: 7, peakDays: 2, storage: "Refrigerate"),
+    // Add more fruits here
+]
+```
+
+### Adjust Ripeness Thresholds
+Modify in `RipenessStatus`:
+```swift
+case 0..<40:    // Unripe
+case 40..<70:   // Partially Ripe
+case 70..<85:   // Ripe
+default:        // Overripe
+```
+
+## Next Steps
+
+1. **Test the app** - Try scanning different items
+2. **Customize design** - Match your brand/style
+3. **Add ML model** - Integrate real image recognition
+4. **Publish** - Submit to App Store when ready
+
+## Resources
+
+- [SwiftUI Documentation](https://developer.apple.com/documentation/swiftui/)
+- [Vision Framework Guide](https://developer.apple.com/documentation/vision)
+- [CoreML Tutorial](https://developer.apple.com/machine-learning/core-ml/)
+- [App Store Submission](https://developer.apple.com/app-store/submissions/)
+
+## Getting Help
+
+- Xcode Issues: https://developer.apple.com/support/
+- SwiftUI Questions: https://developer.apple.com/forums/
+- Stack Overflow: Tag questions with [swiftui] and [ios]
+
+---
+ 

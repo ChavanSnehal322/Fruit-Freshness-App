@@ -1,0 +1,29 @@
+{
+  "activityEntities" : [
+    "projectCreated",
+    [
+      {
+        "createdDate" : "2026-02-11T04:29:33Z",
+        "event" : "projectCreated",
+        "id" : "B724F25F-9983-477E-B918-58356B32783F",
+        "subtitle" : "fruitRipenessModel",
+        "title" : "Project Created"
+      }
+    ]
+  ],
+  "authorName" : "Snehal Chavan",
+  "createdDate" : "2026-02-11T04:29:33Z",
+  "description" : "",
+  "id" : "61E1A374-A51A-46DF-9564-068537C8CB46",
+  "license" : "",
+  "location" : "",
+  "modifiedDate" : "2026-02-11T04:29:33Z",
+  "projectName" : "fruitRipenessModel",
+  "settingsEntity" : {
+    "snapshotOnExtendTraining" : true,
+    "snapshotOnResumeTraining" : false
+  },
+  "taskType" : "imageClassifier",
+  "title" : "Image Classification",
+  "version" : "1.1"
+}
